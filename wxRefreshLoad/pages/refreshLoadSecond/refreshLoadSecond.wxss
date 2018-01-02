@@ -1,0 +1,18 @@
+.tab-view{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  flex-flow: row nowrap;
+  background-color: #ffffff;
+}
+.tab-view view{
+  text-align: center;
+  padding: 20rpx;
+  flex: 1; 
+}
+
+.tab-view view.on{
+  color: red;
+}

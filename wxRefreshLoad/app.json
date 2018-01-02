@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/refreshLoadSecond/refreshLoadSecond",
+    "pages/refreshLoadFirst/refreshLoadFirst"
+    
+  ],
+  "window": {
+    "navigationBarTitleText": "下拉上拉Demo"
+  },
+  "tabBar": {
+  "list": [
+    {
+      "pagePath": "pages/refreshLoadFirst/refreshLoadFirst",
+      "text": "第一方式",
+      "iconPath": "pages/images/iv1.png",
+      "selectedIconPath": "pages/images/iv2.png"
+    },
+    {
+      "pagePath": "pages/refreshLoadSecond/refreshLoadSecond",
+      "text": "第二方式",
+      "iconPath": "pages/images/iv3.png",
+      "selectedIconPath": "pages/images/iv4.png"
+    }
+  ]
+  }
+}

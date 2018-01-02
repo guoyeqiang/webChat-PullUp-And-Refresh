@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class='tab-view'>
+    <block wx:for='{{tabMenus}}' wx:for-item='tabMenu' wx:for-index='tabMenuIdx' wx:key='tabMenuKey'>
+      <view class='{{ tabMenuIdx==listIdx ? "on" : ""}}' catchtap='tabMenuClick' data-tabMenuIndex='{{tabMenuIdx}}'>{{tabMenu.moviesType}}</view>
+    </block>
+  </view>
+  <block wx:for='{{tabMenus.length}}' wx:for-index='DatalistIdx'>
+    <view class='movies' hidden='{{DatalistIdx!=listIdx}}'>
+      <block wx:for='{{movies}}' wx:for-index='moviesxIdx' wx:for-item='movie' wx:key='moviesKey'>
+        <view class='movie'>
+          <image class='moviePic' src='{{movie.imgSrc}}'></image>
+          <text>{{movie.title}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+  <text class='isLoadFinished' hidden='{{!isLoadFinished}}'>--------\t我是有底线的\t--------</text>
+</view>

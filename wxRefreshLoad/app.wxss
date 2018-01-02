@@ -1,0 +1,51 @@
+.container{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-view{
+  z-index: 999;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  flex-flow: row nowrap;
+  background-color: #ffffff;
+}
+.tab-view view{
+  text-align: center;
+  padding: 20rpx;
+  flex: 1; 
+}
+
+.tab-view view.on{
+  color: red;
+}
+
+.movies{
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 82rpx;
+}
+.movie{
+  width:50%;
+  display: flex;
+  flex-flow: column wrap;
+  float: left;
+  align-items: center;
+}
+.moviePic{
+  padding: 20rpx;
+  width:200rpx;
+  height: 250rpx;
+}
+.movie text{
+  text-align: center;
+  width: 250rpx;
+  font-size: 32rpx;
+}
+.isLoadFinished{
+  padding: 35rpx;
+}

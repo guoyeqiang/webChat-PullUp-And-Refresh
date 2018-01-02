@@ -1,0 +1,21 @@
+
+<view class='container'>
+<!--下面行text可删除，测试在使用scroll-view为什么上拉下拉不能共存。-->
+<text style='margin-top:80rpx;'>小程序上拉下拉共存时不可使用scroll-view。使用bindscrolltolower，必须搭配使用的scroll-view会导致小程序"enablePullDownRefresh": true下拉不能使用。改scroll-view为view,所以请使用第一种方式实现上拉下拉共存。</text>
+  <view class='tab-view'>
+    <block wx:for='{{tabMenus}}' wx:for-item='tabMenu' wx:for-index='tabMenuIdx' wx:key='tabMenuKey'>
+      <view class='{{ tabMenuIdx==listIdx ? "on" : ""}}' catchtap='tabMenuClick' data-tabMenuIndex='{{tabMenuIdx}}'>{{tabMenu.moviesType}}</view>
+    </block>
+  </view>
+  <block wx:for='{{tabMenus.length}}' wx:for-index='DatalistIdx'>
+    <scroll-view class='movies' hidden='{{DatalistIdx!=listIdx}}' style='height:{{viewHeight}}px' scroll-y='{{true}}' bindscrolltoupper='refreshLists' bindscrolltolower='loadLists'>
+      <block wx:for='{{movies}}' wx:for-index='moviesxIdx' wx:for-item='movie' wx:key='moviesKey'>
+        <view class='movie'>
+          <image class='moviePic' src='{{movie.imgSrc}}'></image>
+          <text>{{movie.title}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </block>
+  <text class='isLoadFinished' hidden='{{!isLoadFinished}}'>--------\t我是有底线的\t--------</text>
+</view>
